@@ -17,7 +17,7 @@ pipeline {
         stage('Init') {
             steps {
                 sh """
-                    cd count
+                    cd session-01/ec2
                     terraform init -reconfigure
                 """
             }
@@ -25,7 +25,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh """
-                    cd count
+                    cd session-01/ec2
                     terraform plan
                 """
             }
@@ -46,7 +46,7 @@ pipeline {
             }
             steps {
                 sh """
-                    cd count
+                    cd session-01/ec2
                     terraform apply -auto-approve
                 """
             }
@@ -67,7 +67,7 @@ pipeline {
             }
             steps {
                 sh """
-                    cd count
+                    cd session-01/ec2
                     terraform destroy -auto-approve
                 """
             }
