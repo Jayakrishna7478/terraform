@@ -29,7 +29,7 @@
 # }
 
 resource "aws_instance" "web" {
-  for_each = var.instance_names
+  for_each = var.instance_name
   ami      = var.ami_id
   instance_type = each.key
   tags = {

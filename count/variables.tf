@@ -1,4 +1,4 @@
-variable "instance_names" {
+variable "instance_name" {
   type = map
   default = {
     #mongodb = "t3.small"
