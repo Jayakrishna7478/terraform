@@ -17,6 +17,7 @@ pipeline {
         stage('Init') {
             steps {
                 sh """
+                    cd count
                     terraform init -reconfigure
                 """
             }
@@ -24,6 +25,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh """
+                    cd count
                     terraform plan
                 """
             }
@@ -44,6 +46,7 @@ pipeline {
             }
             steps {
                 sh """
+                    cd count
                     terraform apply -auto-approve
                 """
             }
@@ -64,6 +67,7 @@ pipeline {
             }
             steps {
                 sh """
+                    cd count
                     terraform destroy -auto-approve
                 """
             }
